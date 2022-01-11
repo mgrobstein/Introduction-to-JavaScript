@@ -83,7 +83,6 @@ function dogYears(humanAge){
 }
 
 
-
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 //Dog feeder - Depending on their weight and age, we need to know how many pounds of food to feed our dog each day!
@@ -111,8 +110,33 @@ Puppies less than 1 year
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
+function hungryDog(weight, age){
+  if(age >= 1){
+    if(weight > 15 ){
+      return weight*0.02;
+    }
+    else if (weight > 11){
+      return weight*0.03;
+    }
+    else if (weight > 6){
+      return weight*0.04;
+    }
+    else {
+      return weight*0.05;
+    }
+  }
+  else if (age >= (7/12)){
+    return weight * 0.04;
+  }
+  else if (age >= (4/12)){
+    return weight * 0.05;
+  }
+  else if (age >= (2/12)){
+    return weight * 0.1
+  }
+  else{
+    return 'Puppies that are younger than eight weeks are too young to leave their mothers'
+  }
 }
 
 
@@ -139,10 +163,49 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
-
+const computer = Math.floor(Math.random() * 3);
+const user = "Paper";
 function game(user, computer){
-  /*add your code here*/
+  if (user === "Rock"){
+    if(computer === 0) {
+      return "it's a tie";
+    }
+    else if (computer === 1){
+      return "you lose!";
+    }
+    else if (computer === 2){
+      return "you win!";
+    }
+  }
+  else if (user === "Scissors"){
+    if(computer === 0) {
+      return "you lose!";
+    }
+    else if (computer === 1){
+      return "you win!";
+    }
+    else if (computer === 2){
+      return "it's a tie";
+    }
+  }
+  else if (user === "Paper"){
+    if(computer === 0) {
+      return "you win!";
+    }
+    else if (computer === 1){
+      return "it's a tie";
+    }
+    else if (computer === 2){
+      return "you lose!";
+    }
 }
+else{
+  return "Your input was invalid"
+}
+}
+console.log(computer);
+console.log(user);
+console.log(game(user,computer));
 
 
 
